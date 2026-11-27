@@ -1,0 +1,29 @@
+[workspace]
+# Cargo workspace 对标 Maven 父 POM 的 <modules> 聚合
+# "base/*" 这类 glob 会匹配目录下所有含 Cargo.toml 的子目录
+resolver = "2"
+members = [
+    # 语言基础（对标 java-tutorials/base）
+    "base/*",
+
+    # 架构风格（对标 java-tutorials/architecture）
+    "architecture/monolithic",
+    "architecture/monolithic-multi-module/*",
+]
+# 后续按阶段加入：
+#   "ownership/*", "traits/*", "advanced/*", "concurrent/*",
+#   "serialize/*", "web/*", "db/*", "rpc/*", "log/*", "cache/*", "mq/*", ...
+
+[workspace.package]
+# 统一版本与 edition 管理（对标根 pom 的 ${revision} + maven.compiler 配置）
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+# 依赖版本统一管理区（对标根 pom 的 <dependencyManagement>）
+# 进入生态模块阶段后启用，例如：
+# serde  = { version = "1", features = ["derive"] }
+# tokio  = { version = "1", features = ["full"] }
+# axum   = "0.8"
+# tracing = "0.1"

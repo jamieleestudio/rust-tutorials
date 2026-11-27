@@ -1,0 +1,9 @@
+# Rust 构建产物（workspace 只有一个根 target/）
+/target
+
+# 备份文件
+**/*.rs.bk
+
+# IDE
+.idea/
+*.iml

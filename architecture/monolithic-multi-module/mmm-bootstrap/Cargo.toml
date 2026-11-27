@@ -1,0 +1,12 @@
+[package]
+name = "mmm-bootstrap"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+# 启动模块依赖全部业务模块（对标 mmm-bootstrap 的 pom 依赖）
+mmm-shared-kernel = { path = "../mmm-shared-kernel" }
+mmm-product = { path = "../mmm-product" }
+mmm-payment = { path = "../mmm-payment" }
+mmm-order = { path = "../mmm-order" }

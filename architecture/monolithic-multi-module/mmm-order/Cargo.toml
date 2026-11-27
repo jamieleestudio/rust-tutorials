@@ -1,0 +1,11 @@
+[package]
+name = "mmm-order"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+# 依赖方向在这里声明，编译器强制执行
+# java 版要靠 ArchUnit 规则检查模块依赖，Rust 直接编译期拒绝越界
+mmm-shared-kernel = { path = "../mmm-shared-kernel" }
+mmm-product = { path = "../mmm-product" }
